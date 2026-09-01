@@ -1,0 +1,1040 @@
+QuestaSim-64 qrun 2025.2 Utility 2025.05 May 31 2025
+Start time: 13:43:49 on Sep 01,2026
+qrun -batch -access=rw+/. -uvmhome uvm-1.2 -timescale 1ns/1ns -mfcu design.sv testbench.sv -voptargs="+acc=npr" -do " run -all; exit" 
+** Note: (qrun-220) 'modelsim.ini' is used as the ini file.
+Creating library 'qrun.out/work'.
+Mapping library 'mtiUvm' to 'qrun.out/work'.
+** Note: (vmap-220) 'modelsim.ini' is used as the ini file.
+QuestaSim-64 vlog 2025.2 Compiler 2025.05 May 31 2025
+Start time: 13:43:49 on Sep 01,2026
+vlog -timescale 1ns/1ns -mfcu -ccflags "-Wno-missing-declarations" -ccflags "-Wno-maybe-uninitialized" -ccflags "-Wno-return-type" -ccflags "-DQUESTA" /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc /usr/share/questa/questasim/verilog_src/uvm-1.2/src/uvm_pkg.sv /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv design.sv testbench.sv -work qrun.out/work "+incdir+/usr/share/questa/questasim/verilog_src/uvm-1.2/src" -statslog qrun.out/stats_log -csession=incr 
+** Note: (vlog-220) 'modelsim.ini' is used as the ini file.
+-- Compiling package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package questa_uvm_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling package axi4_lite_pkg
+** Warning: ** while parsing file included at testbench.sv(4)
+** at axi4_lite_mon_if.sv(54): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:52.
+** Warning: ** while parsing file included at testbench.sv(4)
+** at axi4_lite_mon_if.sv(56): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:54.
+** Warning: ** while parsing file included at testbench.sv(4)
+** at axi4_lite_mon_if.sv(58): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:56.
+-- Compiling package uvm_pkg_sv_unit
+-- Importing package axi4_lite_pkg
+-- Importing package uvm_pkg (uvm-1.2 Built-in)
+-- Compiling module axi4_lite_master_write
+-- Compiling module axi4_lite_master_read
+-- Compiling module axi4_lite_slave_write
+-- Compiling module axi4_lite_slave_read
+-- Compiling module axi4_lite_slave_registers
+-- Compiling module axi4_lite_master_top
+-- Compiling module axi4_lite_slave_top
+-- Compiling module axi4_lite
+-- Compiling interface axi4_lite_if
+-- Compiling interface axi4_lite_mon_if
+** Warning: axi4_lite_mon_if.sv(54): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:52.
+** Warning: axi4_lite_mon_if.sv(56): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:54.
+** Warning: axi4_lite_mon_if.sv(58): (vlog-2565) Property w_stable asserted multiple times, previously asserted at axi4_lite_mon_if.sv:56.
+-- Compiling module axi4_lite_bind
+-- Compiling module tb_top
+
+Top level modules:
+	tb_top
+** Warning: (vlog-2650) 'bind' found in compilation unit scope. Please use -mfcu -cuname to ensure that 'bind' gets elaborated.
+** Note: (vlog-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+-- Compiling DPI/PLI C++ file /usr/share/questa/questasim/verilog_src/uvm-1.2/src/dpi/uvm_dpi.cc
+End time: 13:43:54 on Sep 01,2026, Elapsed time: 0:00:05
+Errors: 0, Warnings: 7
+QuestaSim-64 vopt 2025.2 Compiler 2025.05 May 31 2025
+** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+Start time: 13:43:54 on Sep 01,2026
+vopt -access=rw+/. -timescale 1ns/1ns -mfcu "+acc=npr" -findtoplevels qrun.out/work+2+ -work qrun.out/work -statslog qrun.out/stats_log -csession=incr -o qrun_opt -csessionid=3 
+** Note: (vopt-220) 'modelsim.ini' is used as the ini file.
+
+Top level modules:
+	tb_top
+
+Analyzing design...
+-- Loading module tb_top
+-- Loading package questa_uvm_pkg
+-- Loading interface axi4_lite_if
+-- Loading interface axi4_lite_mon_if
+-- Loading module axi4_lite
+-- Loading module axi4_lite_master_top
+-- Loading module axi4_lite_master_write
+-- Loading module axi4_lite_master_read
+-- Loading module axi4_lite_slave_top
+-- Loading module axi4_lite_slave_write
+-- Loading module axi4_lite_slave_read
+-- Loading module axi4_lite_slave_registers
+-- Loading module axi4_lite_bind
+Optimizing 18 design-units (inlining 0/12 module instances):
+-- Optimizing interface axi4_lite_if(fast)
+-- Optimizing package uvm_pkg (uvm-1.2 Built-in)(fast)
+-- Optimizing package questa_uvm_pkg(fast)
+-- Optimizing package axi4_lite_pkg(fast)
+-- Optimizing package uvm_pkg_sv_unit(fast)
+-- Optimizing interface axi4_lite_mon_if(fast__2)
+-- Optimizing interface axi4_lite_if(fast__2)
+-- Optimizing module axi4_lite_slave_write(fast)
+-- Optimizing module axi4_lite_master_write(fast)
+-- Optimizing module axi4_lite_slave_registers(fast)
+-- Optimizing module axi4_lite_slave_read(fast)
+-- Optimizing module axi4_lite_master_read(fast)
+-- Optimizing module axi4_lite_slave_top(fast)
+-- Optimizing module axi4_lite_bind(fast)
+-- Optimizing module axi4_lite_master_top(fast)
+-- Optimizing module axi4_lite(fast)
+-- Optimizing module tb_top(fast)
+-- Optimizing interface axi4_lite_mon_if(fast)
+Optimized design name is qrun_opt
+End time: 13:44:05 on Sep 01,2026, Elapsed time: 0:00:11
+Errors: 0, Warnings: 1
+# ** Note: (vsim-220) 'modelsim.ini' is used as the ini file.
+# vsim -batch -lib qrun.out/work -do " run -all; exit" -statslog qrun.out/stats_log qrun_opt -appendlog -l qrun.log 
+# Start time: 13:44:05 on Sep 01,2026
+# Loading /tmp/root@61a2e7eef4ed_dpi_40/linux_x86_64_gcc-11/export_tramp.so
+# //  Questa Sim-64
+# //  Version 2025.2 linux_x86_64 May 31 2025
+# //
+# // Unpublished work. Copyright 2025 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.axi4_lite_if(fast)
+# Loading work.axi4_lite_mon_if(fast)
+# Loading work.uvm_pkg(fast)
+# Loading work.axi4_lite_pkg(fast)
+# Loading work.uvm_pkg_sv_unit(fast)
+# Loading work.questa_uvm_pkg(fast)
+# Loading work.tb_top(fast)
+# Loading work.axi4_lite_if(fast__2)
+# Loading work.axi4_lite_mon_if(fast__2)
+# Loading work.axi4_lite(fast)
+# Loading work.axi4_lite_master_top(fast)
+# Loading work.axi4_lite_master_write(fast)
+# Loading work.axi4_lite_master_read(fast)
+# Loading work.axi4_lite_slave_top(fast)
+# Loading work.axi4_lite_slave_write(fast)
+# Loading work.axi4_lite_slave_read(fast)
+# Loading work.axi4_lite_slave_registers(fast)
+# Loading work.axi4_lite_bind(fast)
+# ** Note: (vsim-7082) For C/C++ auto compile, choosing compiler /usr/bin/g++ set from the PATH environment variable.
+# Compiling /tmp/root@61a2e7eef4ed_dpi_40/linux_x86_64_gcc-11/exportwrapper.c
+# Loading /tmp/root@61a2e7eef4ed_dpi_40/linux_x86_64_gcc-11/vsim_auto_compile.so
+# 
+# run -all
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO /usr/share/questa/questasim/verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test base_test...
+# UVM_INFO axi4_lite_coverage.sv(99) @ 65: uvm_test_top.env.cg [uvm_component] Current coverage = 18.18%
+# UVM_INFO axi4_lite_scb.sv(84) @ 65: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x0 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 65: uvm_test_top.env.cg [uvm_component] Current coverage = 37.99%
+# UVM_INFO axi4_lite_scb.sv(135) @ 65: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x0|ADDR: 0x0 | DATA: 0x0 | DATA: 0x0 | STRB: 0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 115: uvm_test_top.env.cg [uvm_component] Current coverage = 37.99%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 115: uvm_test_top.env.cg [uvm_component] Current coverage = 37.99%
+# UVM_INFO axi4_lite_scb.sv(135) @ 115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x0|ADDR: 0x0 | DATA: 0x0 | DATA: 0x0 | STRB: 0 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x0 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 165: uvm_test_top.env.cg [uvm_component] Current coverage = 37.99%
+# UVM_INFO axi4_lite_scb.sv(84) @ 165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x0 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 165: uvm_test_top.env.cg [uvm_component] Current coverage = 39.29%
+# UVM_INFO axi4_lite_scb.sv(135) @ 165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x54|ADDR: 0x54 | DATA: 0xddc6a658 | DATA: 0xddc6a658 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 215: uvm_test_top.env.cg [uvm_component] Current coverage = 40.58%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 215: uvm_test_top.env.cg [uvm_component] Current coverage = 40.58%
+# UVM_INFO axi4_lite_scb.sv(135) @ 215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0x5232f2d9 | DATA: 0x5232f2d9 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x0 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 265: uvm_test_top.env.cg [uvm_component] Current coverage = 40.58%
+# UVM_INFO axi4_lite_scb.sv(84) @ 265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x88 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 265: uvm_test_top.env.cg [uvm_component] Current coverage = 40.58%
+# UVM_INFO axi4_lite_scb.sv(135) @ 265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x24|ADDR: 0x24 | DATA: 0xcdda97e9 | DATA: 0xcdda97e9 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 315: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 315: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x98|ADDR: 0x98 | DATA: 0xc68851a0 | DATA: 0xc68851a0 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x88 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 365: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(84) @ 365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x58 | RDATA: 0xc68851a0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 365: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x80|ADDR: 0x80 | DATA: 0x3a76987c | DATA: 0x3a76987c | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 415: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 415: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x6c|ADDR: 0x6c | DATA: 0xeb75db98 | DATA: 0xeb75db98 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xdd00a658 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 465: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(84) @ 465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xfc | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 465: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x7a3fdd44 | DATA: 0x7a3fdd44 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 515: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 515: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x6dd60fd5 | DATA: 0x6dd60fd5 | STRB: 100 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 515: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xfc DATA: 0xd6dd00 RESP: OKAY | ACTUAL: ADDR: 0xfc DATA: 0x3fdd00 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 565: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(84) @ 565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xfc | RDATA: 0xd6dd00 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 565: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x10|ADDR: 0x10 | DATA: 0x12590a41 | DATA: 0x12590a41 | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 615: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 615: uvm_test_top.env.cg [uvm_component] Current coverage = 41.88%
+# UVM_INFO axi4_lite_scb.sv(135) @ 615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x14|ADDR: 0x14 | DATA: 0x1c090ad6 | DATA: 0x1c090ad6 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xfc | RDATA: 0xd6dd00 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 665: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(84) @ 665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 665: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x6e759214 | DATA: 0x6e759214 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 715: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 715: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0xda1c6b69 | DATA: 0xda1c6b69 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8 | RDATA: 0x0 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 765: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(84) @ 765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xac | RDATA: 0x750000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 765: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xa8|ADDR: 0xa8 | DATA: 0x2c6e9121 | DATA: 0x2c6e9121 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 815: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 815: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf8|ADDR: 0xf8 | DATA: 0xf71c98a2 | DATA: 0xf71c98a2 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xac | RDATA: 0x750000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 865: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(84) @ 865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xac | RDATA: 0x750000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 865: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x70|ADDR: 0x70 | DATA: 0xd04fe6d6 | DATA: 0xd04fe6d6 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 915: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 915: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0x8f857481 | DATA: 0x8f857481 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xac | RDATA: 0x750000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 965: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(84) @ 965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0xd6dd00 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 965: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc8|ADDR: 0xc8 | DATA: 0x26a06316 | DATA: 0x26a06316 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1015: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1015: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0xd4c0989c | DATA: 0xd4c0989c | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x30 | RDATA: 0xd0590ad6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1065: uvm_test_top.env.cg [uvm_component] Current coverage = 46.43%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x50 | RDATA: 0xd0590ad6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1065: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0x1e931964 | DATA: 0x1e931964 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1115: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1115: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x94|ADDR: 0x94 | DATA: 0x56344db2 | DATA: 0x56344db2 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x84 | RDATA: 0x8f009781 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1165: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa8 | RDATA: 0x26a00000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1165: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8c|ADDR: 0x8c | DATA: 0x5b0b64cd | DATA: 0x5b0b64cd | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1215: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1215: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x3c|ADDR: 0x3c | DATA: 0xeced0835 | DATA: 0xeced0835 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa8 | RDATA: 0x26a00000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1265: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa8 | RDATA: 0x26a00000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1265: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x50|ADDR: 0x50 | DATA: 0xbbefd02c | DATA: 0xbbefd02c | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1315: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1315: uvm_test_top.env.cg [uvm_component] Current coverage = 47.73%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe4|ADDR: 0xe4 | DATA: 0x502ef72b | DATA: 0x502ef72b | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa8 | RDATA: 0x26a00000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1365: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x4 | RDATA: 0x8f00972b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1365: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x1c|ADDR: 0x1c | DATA: 0xe5a8f816 | DATA: 0xe5a8f816 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1415: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1415: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x5c|ADDR: 0x5c | DATA: 0xbef7c197 | DATA: 0xbef7c197 | STRB: 110 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 1415: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xdc DATA: 0xecf7c164 RESP: OKAY | ACTUAL: ADDR: 0xdc DATA: 0xeca80864 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1465: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xdc | RDATA: 0xecf7c164 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1465: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x34|ADDR: 0x34 | DATA: 0xd4b9067e | DATA: 0xd4b9067e | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1515: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1515: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0xb1d0f453 | DATA: 0xb1d0f453 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xdc | RDATA: 0xecf7c164 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1565: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x54 | RDATA: 0xb1b96b53 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1565: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0xb1d0f453 | DATA: 0xb1d0f453 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1615: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1615: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x14|ADDR: 0x14 | DATA: 0xee489250 | DATA: 0xee489250 | STRB: 100 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 1615: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0x74 DATA: 0xb1486b53 RESP: OKAY | ACTUAL: ADDR: 0x74 DATA: 0xb1b96b53 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1665: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xb1486b53 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1665: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xbc|ADDR: 0xbc | DATA: 0x6c1e7619 | DATA: 0x6c1e7619 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1715: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1715: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x80|ADDR: 0x80 | DATA: 0x5ca31ffd | DATA: 0x5ca31ffd | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x50 | RDATA: 0xbb59d0d6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1765: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xb1486b53 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1765: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0x86b09761 | DATA: 0x86b09761 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1815: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1815: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x30|ADDR: 0x30 | DATA: 0x7ceef1be | DATA: 0x7ceef1be | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xb1486b61 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1865: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xb1486b61 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1865: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0xdb2d7a97 | DATA: 0xdb2d7a97 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1915: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1915: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0xdb2d7a97 | DATA: 0xdb2d7a97 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 1915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0x6c1ec119 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1965: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 1965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0x6c1ec119 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 1965: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 1965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x98|ADDR: 0x98 | DATA: 0x92ba7977 | DATA: 0x92ba7977 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2015: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2015: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x64|ADDR: 0x64 | DATA: 0xc09c12a9 | DATA: 0xc09c12a9 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0x6c1ec119 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2065: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2065: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd0|ADDR: 0xd0 | DATA: 0x635ae6a6 | DATA: 0x635ae6a6 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2115: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2115: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x68|ADDR: 0x68 | DATA: 0x353c55aa | DATA: 0x353c55aa | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2165: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2165: uvm_test_top.env.cg [uvm_component] Current coverage = 52.27%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf0|ADDR: 0xf0 | DATA: 0x177e2dec | DATA: 0x177e2dec | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2215: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2215: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x90|ADDR: 0x90 | DATA: 0x32e78610 | DATA: 0x32e78610 | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2265: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x68 | RDATA: 0x35a05500 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2265: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0xbd408f0c | DATA: 0xbd408f0c | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2315: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2315: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf8|ADDR: 0xf8 | DATA: 0xeb2a5580 | DATA: 0xeb2a5580 | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x30 | RDATA: 0x177e86ec | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2365: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2365: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb0|ADDR: 0xb0 | DATA: 0x64376146 | DATA: 0x64376146 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2415: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2415: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x4c|ADDR: 0x4c | DATA: 0x8b3f47a2 | DATA: 0x8b3f47a2 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2465: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2465: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x68|ADDR: 0x68 | DATA: 0xf4f343c6 | DATA: 0xf4f343c6 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2515: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2515: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x5979145 | DATA: 0x5979145 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0xa39214 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2565: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x70 | RDATA: 0x647e6146 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2565: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe4|ADDR: 0xe4 | DATA: 0x75dae245 | DATA: 0x75dae245 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2615: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2615: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x186c52b | DATA: 0x186c52b | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x18 | RDATA: 0x92ba5577 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2665: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x18 | RDATA: 0x92ba5577 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2665: uvm_test_top.env.cg [uvm_component] Current coverage = 53.57%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc8|ADDR: 0xc8 | DATA: 0xc66bf47f | DATA: 0xc66bf47f | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2715: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2715: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x80|ADDR: 0x80 | DATA: 0x46c9d0e8 | DATA: 0x46c9d0e8 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x4c | RDATA: 0x8b0b47a2 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2765: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x9c | RDATA: 0x186c519 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2765: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x60|ADDR: 0x60 | DATA: 0xdba7d2e5 | DATA: 0xdba7d2e5 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2815: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2815: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0xdb7b28a6 | DATA: 0xdb7b28a6 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x9c | RDATA: 0x186c519 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2865: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x90 | RDATA: 0x647e6146 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2865: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x9c|ADDR: 0x9c | DATA: 0x3a2c650 | DATA: 0x3a2c650 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2915: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2915: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc8|ADDR: 0xc8 | DATA: 0x43a25ae2 | DATA: 0x43a25ae2 | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 2915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2965: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 2965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 2965: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 2965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x68|ADDR: 0x68 | DATA: 0x3aa400ec | DATA: 0x3aa400ec | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3015: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3015: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb0|ADDR: 0xb0 | DATA: 0x555736ed | DATA: 0x555736ed | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3065: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3065: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x10|ADDR: 0x10 | DATA: 0x1b7726f1 | DATA: 0x1b7726f1 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3115: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3115: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x20|ADDR: 0x20 | DATA: 0x75212ad9 | DATA: 0x75212ad9 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3165: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xec | RDATA: 0x8b0b47a2 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3165: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x40|ADDR: 0x40 | DATA: 0x9300dc4b | DATA: 0x9300dc4b | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3215: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3215: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf0|ADDR: 0xf0 | DATA: 0xef7e0252 | DATA: 0xef7e0252 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3265: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xc66b5aec | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3265: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x69bd4a2e | DATA: 0x69bd4a2e | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3315: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3315: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0xc63e366f | DATA: 0xc63e366f | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3365: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3365: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe8|ADDR: 0xe8 | DATA: 0xff0605c8 | DATA: 0xff0605c8 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3415: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3415: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe8|ADDR: 0xe8 | DATA: 0x9c3d065f | DATA: 0x9c3d065f | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3465: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x8f9c7a45 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3465: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xe475ccb6 | DATA: 0xe475ccb6 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3515: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3515: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x38|ADDR: 0x38 | DATA: 0x58f978b4 | DATA: 0x58f978b4 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x90 | RDATA: 0xef7e0252 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3565: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x90 | RDATA: 0xef7e0252 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3565: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd0|ADDR: 0xd0 | DATA: 0x891b4e42 | DATA: 0x891b4e42 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3615: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3615: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x80|ADDR: 0x80 | DATA: 0x133a803b | DATA: 0x133a803b | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x90 | RDATA: 0x897e0242 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3665: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3665: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x5c|ADDR: 0x5c | DATA: 0x9699529e | DATA: 0x9699529e | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3715: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3715: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x10|ADDR: 0x10 | DATA: 0xd8d296ac | DATA: 0xd8d296ac | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3765: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3765: uvm_test_top.env.cg [uvm_component] Current coverage = 54.87%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x64|ADDR: 0x64 | DATA: 0x9c520da1 | DATA: 0x9c520da1 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3815: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3815: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc|ADDR: 0xc | DATA: 0x8320bb0a | DATA: 0x8320bb0a | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0xdb40280c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3865: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x24 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3865: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc8|ADDR: 0xc8 | DATA: 0xb5d12771 | DATA: 0xb5d12771 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3915: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3915: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x78|ADDR: 0x78 | DATA: 0x2153118a | DATA: 0x2153118a | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 3915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x24 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3965: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(84) @ 3965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf0 | RDATA: 0xd87e96ac | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 3965: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 3965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd8|ADDR: 0xd8 | DATA: 0x44c6fa08 | DATA: 0x44c6fa08 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4015: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4015: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x40|ADDR: 0x40 | DATA: 0xa8394893 | DATA: 0xa8394893 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf0 | RDATA: 0xd87e96ac | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4065: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4065: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x30157bfd | DATA: 0x30157bfd | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4115: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4115: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x70|ADDR: 0x70 | DATA: 0xb50bb4fe | DATA: 0xb50bb4fe | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4165: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4165: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x34|ADDR: 0x34 | DATA: 0xc18a5849 | DATA: 0xc18a5849 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4215: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4215: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x6e9951e5 | DATA: 0x6e9951e5 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4265: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4265: uvm_test_top.env.cg [uvm_component] Current coverage = 59.74%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0xc22ea0d1 | DATA: 0xc22ea0d1 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4315: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4315: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0xd44f3e85 | DATA: 0xd44f3e85 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x8f9c7aa1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4365: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x38 | RDATA: 0x92531108 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4365: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x10|ADDR: 0x10 | DATA: 0xb7c806e0 | DATA: 0xb7c806e0 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4415: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4415: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x28|ADDR: 0x28 | DATA: 0xed6e9507 | DATA: 0xed6e9507 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x38 | RDATA: 0x92531108 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4465: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x68 | RDATA: 0x6e6e9507 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4465: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x14|ADDR: 0x14 | DATA: 0x710ea244 | DATA: 0x710ea244 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4515: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4515: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x18|ADDR: 0x18 | DATA: 0x41a646be | DATA: 0x41a646be | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x80 | RDATA: 0x7539483b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4565: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x88 | RDATA: 0x6e6e9507 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4565: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x9c|ADDR: 0x9c | DATA: 0x1bb31248 | DATA: 0x1bb31248 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4615: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4615: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0x5fa7b6fa | DATA: 0x5fa7b6fa | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa8 | RDATA: 0x6e6e9507 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4665: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0x7539483b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4665: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x3c|ADDR: 0x3c | DATA: 0x8225ab0 | DATA: 0x8225ab0 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4715: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4715: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe8|ADDR: 0xe8 | DATA: 0x75d9c152 | DATA: 0x75d9c152 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0x7539483b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4765: uvm_test_top.env.cg [uvm_component] Current coverage = 64.61%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0x7539483b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4765: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x4|ADDR: 0x4 | DATA: 0x7b435d69 | DATA: 0x7b435d69 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4815: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4815: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x30a39ac6 | DATA: 0x30a39ac6 | STRB: 1 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 4815: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xe0 DATA: 0x753948c6 RESP: OKAY | ACTUAL: ADDR: 0xe0 DATA: 0x7539483b RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4865: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe0 | RDATA: 0x753948c6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4865: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0xe65e685d | DATA: 0xe65e685d | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4915: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4915: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf0|ADDR: 0xf0 | DATA: 0xd1ffd1be | DATA: 0xd1ffd1be | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 4915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x94 | RDATA: 0xe65e2844 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4965: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(84) @ 4965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x68 | RDATA: 0x756e9552 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 4965: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 4965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x8fdcd4c6 | DATA: 0x8fdcd4c6 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5015: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5015: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xe4|ADDR: 0xe4 | DATA: 0xc6b1fded | DATA: 0xc6b1fded | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x68 | RDATA: 0x8f6ed452 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5065: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x6c | RDATA: 0x8375ccb6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5065: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x24|ADDR: 0x24 | DATA: 0x1a376c26 | DATA: 0x1a376c26 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5115: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5115: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0x1c6690a2 | DATA: 0x1c6690a2 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x18 | RDATA: 0x925311be | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5165: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa4 | RDATA: 0x1ab15d69 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5165: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x40|ADDR: 0x40 | DATA: 0x4d547030 | DATA: 0x4d547030 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5215: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5215: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x24|ADDR: 0x24 | DATA: 0xe3113b4e | DATA: 0xe3113b4e | STRB: 100 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 5215: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xa4 DATA: 0x1a115d69 RESP: OKAY | ACTUAL: ADDR: 0xa4 DATA: 0x1ab15d69 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5265: uvm_test_top.env.cg [uvm_component] Current coverage = 69.48%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xa4 | RDATA: 0x1a115d69 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5265: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0x7ea612c6 | DATA: 0x7ea612c6 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5315: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5315: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0x7ea612c6 | DATA: 0x7ea612c6 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x98 | RDATA: 0x925311be | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5365: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8c | RDATA: 0x8375ccb6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5365: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x50|ADDR: 0x50 | DATA: 0x5b2143e4 | DATA: 0x5b2143e4 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5415: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5415: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x50|ADDR: 0x50 | DATA: 0x5b2143e4 | DATA: 0x5b2143e4 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0x8f6ed4c6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5465: uvm_test_top.env.cg [uvm_component] Current coverage = 69.81%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd8 | RDATA: 0x925311be | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x4|ADDR: 0x4 | DATA: 0x9a94a18e | DATA: 0x9a94a18e | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x84|ADDR: 0x84 | DATA: 0x62d9ae4e | DATA: 0x62d9ae4e | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc8 | RDATA: 0x8f6ed4c6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc0 | RDATA: 0x4d544830 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xa4|ADDR: 0xa4 | DATA: 0xb554066b | DATA: 0xb554066b | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0x6e11f067 | DATA: 0x6e11f067 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x2c | RDATA: 0x8375ccb6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x58 | RDATA: 0x925311be | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xa0|ADDR: 0xa0 | DATA: 0x32713c96 | DATA: 0x32713c96 | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0xaf40c4c2 | DATA: 0xaf40c4c2 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x34 | RDATA: 0xe611f067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x34 | RDATA: 0xe611f067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x2c|ADDR: 0x2c | DATA: 0xd943ad6b | DATA: 0xd943ad6b | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x1c|ADDR: 0x1c | DATA: 0x857c11d | DATA: 0x857c11d | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x34 | RDATA: 0xe611f067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x6c | RDATA: 0x8343cc6b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x1c|ADDR: 0x1c | DATA: 0x857c11d | DATA: 0x857c11d | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0xff3fdfc3 | DATA: 0xff3fdfc3 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 5915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x6c | RDATA: 0x8343cc6b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 5965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x6c | RDATA: 0x8343cc6b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 5965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 5965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x18|ADDR: 0x18 | DATA: 0x460d3bf5 | DATA: 0x460d3bf5 | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb8|ADDR: 0xb8 | DATA: 0xebfa272e | DATA: 0xebfa272e | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x34 | RDATA: 0xff3ff067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x14 | RDATA: 0xff3ff067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xbc|ADDR: 0xbc | DATA: 0x966fde84 | DATA: 0x966fde84 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0x69f934ce | DATA: 0x69f934ce | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x14 | RDATA: 0xff3ff067 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0x696fdece | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x68|ADDR: 0x68 | DATA: 0x86f5a854 | DATA: 0x86f5a854 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0xfdc81dca | DATA: 0xfdc81dca | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xbc | RDATA: 0x696fdece | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x24 | RDATA: 0xfdc8aeca | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0xfdc81dca | DATA: 0xfdc81dca | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0x9c57de4 | DATA: 0x9c57de4 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x24 | RDATA: 0xfdc8aeca | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x90 | RDATA: 0xb52106be | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0x2b3af642 | DATA: 0x2b3af642 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0xe158d451 | DATA: 0xe158d451 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd4 | RDATA: 0x93ff0e4 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x34 | RDATA: 0x93ff0e4 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x81890ee3 | DATA: 0x81890ee3 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x70|ADDR: 0x70 | DATA: 0xefde27ea | DATA: 0xefde27ea | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x20 | RDATA: 0x3271d451 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x9c | RDATA: 0x696fdece | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x34|ADDR: 0x34 | DATA: 0xd6b11789 | DATA: 0xd6b11789 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x10ba3d1 | DATA: 0x10ba3d1 | STRB: 11 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 6615: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0x9c DATA: 0x696fa3d1 RESP: OKAY | ACTUAL: ADDR: 0x9c DATA: 0x696fdece RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x2b3aaeca | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xfc|ADDR: 0xfc | DATA: 0x4f7671b2 | DATA: 0x4f7671b2 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xac|ADDR: 0xac | DATA: 0xc5d35d9e | DATA: 0xc5d35d9e | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x2b3aaeca | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0xb52106ea | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0xcede474c | DATA: 0xcede474c | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0xacad6504 | DATA: 0xacad6504 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x84 | RDATA: 0x2b3aaeca | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe8 | RDATA: 0x81de0e4c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x18|ADDR: 0x18 | DATA: 0xb07fc088 | DATA: 0xb07fc088 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x2809176b | DATA: 0x2809176b | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 6915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe8 | RDATA: 0x81de0e4c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(84) @ 6965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x68 | RDATA: 0x81de0e4c | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 6965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.13%
+# UVM_INFO axi4_lite_scb.sv(135) @ 6965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x40|ADDR: 0x40 | DATA: 0xbc25534f | DATA: 0xbc25534f | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x4|ADDR: 0x4 | DATA: 0x90218f5e | DATA: 0x90218f5e | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xec | RDATA: 0x8343cc9e | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8c | RDATA: 0x8343cc9e | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x16c6a707 | DATA: 0x16c6a707 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd8|ADDR: 0xd8 | DATA: 0x21bce88a | DATA: 0x21bce88a | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8c | RDATA: 0x8343cc9e | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x1c | RDATA: 0x4f6fa3b2 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0x243ef818 | DATA: 0x243ef818 | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x70|ADDR: 0x70 | DATA: 0x855545a | DATA: 0x855545a | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x1c | RDATA: 0x4f6fa3b2 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xb4 | RDATA: 0xacad6504 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x50|ADDR: 0x50 | DATA: 0xc495d09e | DATA: 0xc495d09e | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x30|ADDR: 0x30 | DATA: 0x3d4bac34 | DATA: 0x3d4bac34 | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xb4 | RDATA: 0xacad6504 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x10 | RDATA: 0x84b06ea | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xbc|ADDR: 0xbc | DATA: 0x69bbb998 | DATA: 0x69bbb998 | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xbc|ADDR: 0xbc | DATA: 0xd0ff0e7b | DATA: 0xd0ff0e7b | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x10 | RDATA: 0x84b06ea | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x20 | RDATA: 0xbc09a707 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x20|ADDR: 0x20 | DATA: 0xbed063a5 | DATA: 0xbed063a5 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x20|ADDR: 0x20 | DATA: 0xbed063a5 | DATA: 0xbed063a5 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd4 | RDATA: 0xacad6504 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x2b3ef818 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x20|ADDR: 0x20 | DATA: 0xbed063a5 | DATA: 0xbed063a5 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x20|ADDR: 0x20 | DATA: 0xbed063a5 | DATA: 0xbed063a5 | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x14 | RDATA: 0xacad6504 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x74 | RDATA: 0xacad6504 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x87edd67d | DATA: 0x87edd67d | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x7c|ADDR: 0x7c | DATA: 0x87edd67d | DATA: 0x87edd67d | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe4 | RDATA: 0x2b3ef818 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xe4 | RDATA: 0x2b3ef818 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x39d48c6c | DATA: 0x39d48c6c | STRB: 100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0x16584b05 | DATA: 0x16584b05 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xec | RDATA: 0x8343cc9e | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xec | RDATA: 0x8343cc9e | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0x3aa0eaf6 | DATA: 0x3aa0eaf6 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0x3aa0eaf6 | DATA: 0x3aa0eaf6 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 7915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x74 | RDATA: 0xacad65f6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 7965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x7c | RDATA: 0x69edd67b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 7965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 7965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x2c|ADDR: 0x2c | DATA: 0xe2c08424 | DATA: 0xe2c08424 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x28|ADDR: 0x28 | DATA: 0xdff80cc0 | DATA: 0xdff80cc0 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x7c | RDATA: 0x69edd67b | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf8 | RDATA: 0xb07fe88a | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0x1df618b5 | DATA: 0x1df618b5 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xec|ADDR: 0xec | DATA: 0x8dbea7de | DATA: 0x8dbea7de | STRB: 111 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 8115: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xec DATA: 0xe2bea7de RESP: OKAY | ACTUAL: ADDR: 0xec DATA: 0xe2438424 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf8 | RDATA: 0xb07fe88a | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x90|ADDR: 0x90 | DATA: 0x143a3271 | DATA: 0x143a3271 | STRB: 110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x88|ADDR: 0x88 | DATA: 0x74b7fc42 | DATA: 0x74b7fc42 | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf8 | RDATA: 0xb07fe88a | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd4 | RDATA: 0xacad65f6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb8|ADDR: 0xb8 | DATA: 0xb124c6c4 | DATA: 0xb124c6c4 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0x3661a6b4 | DATA: 0x3661a6b4 | STRB: 1000 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 8315: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xd4 DATA: 0x36ad65f6 RESP: OKAY | ACTUAL: ADDR: 0xd4 DATA: 0xacad65f6 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd8 | RDATA: 0xb07fc6c4 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xa8|ADDR: 0xa8 | DATA: 0x805ad27b | DATA: 0x805ad27b | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf8|ADDR: 0xf8 | DATA: 0x7c010448 | DATA: 0x7c010448 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x30 | RDATA: 0x83a32ea | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x30 | RDATA: 0x83a32ea | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x94|ADDR: 0x94 | DATA: 0xf37d4d6 | DATA: 0xf37d4d6 | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x18|ADDR: 0x18 | DATA: 0x259d9166 | DATA: 0x259d9166 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xac | RDATA: 0xe2bea7de | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xb4 | RDATA: 0x363765d6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd0|ADDR: 0xd0 | DATA: 0x95de5c1c | DATA: 0x95de5c1c | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0xcffc5521 | DATA: 0xcffc5521 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xb4 | RDATA: 0x363765d6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf8 | RDATA: 0x257fc6c4 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x48|ADDR: 0x48 | DATA: 0x1512b5d9 | DATA: 0x1512b5d9 | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0xfbecedd2 | DATA: 0xfbecedd2 | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf8 | RDATA: 0x257fc6c4 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x40 | RDATA: 0xbed4a7a5 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf8|ADDR: 0xf8 | DATA: 0x27057f01 | DATA: 0x27057f01 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x68|ADDR: 0x68 | DATA: 0x5911de41 | DATA: 0x5911de41 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd4 | RDATA: 0x363765d6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8865: uvm_test_top.env.cg [uvm_component] Current coverage = 70.45%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x10|ADDR: 0x10 | DATA: 0x502432b0 | DATA: 0x502432b0 | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8915: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0x4b7333f0 | DATA: 0x4b7333f0 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 8915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 8965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 8965: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 8965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xec|ADDR: 0xec | DATA: 0xa406631c | DATA: 0xa406631c | STRB: 111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9015: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x9c|ADDR: 0x9c | DATA: 0xc14ba3ca | DATA: 0xc14ba3ca | STRB: 1001 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9015: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x64 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9065: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x40|ADDR: 0x40 | DATA: 0x73adaf47 | DATA: 0x73adaf47 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9115: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x8|ADDR: 0x8 | DATA: 0xd211f9b3 | DATA: 0xd211f9b3 | STRB: 1011 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 9115: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0x28 DATA: 0xd273f9b3 RESP: OKAY | ACTUAL: ADDR: 0x28 DATA: 0x4b7333f0 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9165: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xec|ADDR: 0xec | DATA: 0x9ae93f17 | DATA: 0x9ae93f17 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9215: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x30|ADDR: 0x30 | DATA: 0x5cb149c6 | DATA: 0x5cb149c6 | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x30 | RDATA: 0x952432c6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9265: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb8|ADDR: 0xb8 | DATA: 0xce0f03d3 | DATA: 0xce0f03d3 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9315: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x54|ADDR: 0x54 | DATA: 0x8c8dcc9e | DATA: 0x8c8dcc9e | STRB: 1100 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf0 | RDATA: 0x952432c6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xb4 | RDATA: 0x8c8d65d6 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9365: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x4c|ADDR: 0x4c | DATA: 0xe325a5ac | DATA: 0xe325a5ac | STRB: 1 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9415: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xb4|ADDR: 0xb4 | DATA: 0xcb7c131d | DATA: 0xcb7c131d | STRB: 101 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 9415: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0xd4 DATA: 0x8c7c651d RESP: OKAY | ACTUAL: ADDR: 0xd4 DATA: 0x8c8d65d6 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd4 | RDATA: 0x8c7c651d | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9465: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0xdf486716 | DATA: 0xdf486716 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9515: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0xdf486716 | DATA: 0xdf486716 | STRB: 1000 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x24 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9565: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc4 | RDATA: 0x1df6ed18 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9565: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9565: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xd4|ADDR: 0xd4 | DATA: 0x5f2072b9 | DATA: 0x5f2072b9 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9615: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9615: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc0|ADDR: 0xc0 | DATA: 0x8469c4fe | DATA: 0x8469c4fe | STRB: 101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9615: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x38 | RDATA: 0xce057f01 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9665: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9665: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9665: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x14|ADDR: 0x14 | DATA: 0x92cc1907 | DATA: 0x92cc1907 | STRB: 1010 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9715: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9715: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xc4|ADDR: 0xc4 | DATA: 0x4e199847 | DATA: 0x4e199847 | STRB: 1101 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9715: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9765: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x28 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9765: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9765: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0xe7fd68a7 | DATA: 0xe7fd68a7 | STRB: 11 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9815: uvm_test_top.env.cg [uvm_component] Current coverage = 70.78%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9815: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9815: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x14|ADDR: 0x14 | DATA: 0x81a430c1 | DATA: 0x81a430c1 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9815: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc | RDATA: 0xe2063fac | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9865: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9865: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xc | RDATA: 0xe2063fac | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9865: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9865: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xf4|ADDR: 0xf4 | DATA: 0x88409a69 | DATA: 0x88409a69 | STRB: 1111 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9915: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9915: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9915: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0x259eb0bf | DATA: 0x259eb0bf | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 9915: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x8 | RDATA: 0xd273f9b3 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9965: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 9965: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xf4 | RDATA: 0x88409a69 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 9965: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 9965: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x44|ADDR: 0x44 | DATA: 0x259eb0bf | DATA: 0x259eb0bf | STRB: 10 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10015: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10015: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10015: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x50|ADDR: 0x50 | DATA: 0xee8d2bfa | DATA: 0xee8d2bfa | STRB: 101 | RESP: OKAY
+# UVM_ERROR axi4_lite_scb.sv(100) @ 10015: uvm_test_top.env.scb [SCB_READ_FAIL] READ FAIL | EXPECTED: ADDR: 0x10 DATA: 0x958d32fa RESP: OKAY | ACTUAL: ADDR: 0x10 DATA: 0x952432c6 RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10065: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 10065: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0x10 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10065: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10065: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0x78|ADDR: 0x78 | DATA: 0xc49749d8 | DATA: 0xc49749d8 | STRB: 1110 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10115: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10115: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10115: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 10115: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10165: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 10165: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10165: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10165: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10215: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10215: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10215: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 10215: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10265: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 10265: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10265: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10265: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10315: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10315: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10315: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 10315: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10365: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 10365: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10365: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10365: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10415: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10415: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10415: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 10415: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10465: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(84) @ 10465: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10465: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10465: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10515: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_coverage.sv(99) @ 10515: uvm_test_top.env.cg [uvm_component] Current coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(135) @ 10515: uvm_test_top.env.scb [SCB_WRITE_PASS] WRITE PASS | ADDR: 0xcc|ADDR: 0xcc | DATA: 0xf5115769 | DATA: 0xf5115769 | STRB: 1011 | RESP: OKAY
+# UVM_INFO axi4_lite_scb.sv(84) @ 10515: uvm_test_top.env.scb [SCB_READ_PASS] READ PASS | ADDR: 0xd0 | RDATA: 0x958d32fa | RESP: OKAY
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_objection.svh(1270) @ 10525: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO axi4_lite_coverage.sv(107) @ 10525: uvm_test_top.env.cg [uvm_component] AXI4-LITE Coverage = 75.32%
+# UVM_INFO axi4_lite_scb.sv(201) @ 10525: uvm_test_top.env.scb [SCB_SUMMARY] 
+# ----------------------------
+# MATCHES:    409
+# MISMATCHES: 11
+# ----------------------------
+# UVM_INFO /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_report_server.svh(847) @ 10525: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :  836
+# UVM_WARNING :    0
+# UVM_ERROR :   11
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [SCB_READ_FAIL]    11
+# [SCB_READ_PASS]   199
+# [SCB_SUMMARY]     1
+# [SCB_WRITE_PASS]   210
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# [uvm_component]   421
+# 
+# ** Note: $finish    : /usr/share/questa/questasim/verilog_src/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 10525 ns  Iteration: 69  Instance: /tb_top
+# End time: 13:44:08 on Sep 01,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+End time: 13:44:08 on Sep 01,2026, Elapsed time: 0:00:19
+*** Summary *********************************************
+    qrun: Errors:   0, Warnings:   0
+    vlog: Errors:   0, Warnings:   7
+    vopt: Errors:   0, Warnings:   1
+    vsim: Errors:   0, Warnings:   0
+  Totals: Errors:   0, Warnings:   8
+Finding VCD file...
+./dump.vcd
+[2026-09-01 17:44:09 UTC] Opening EPWave...
+Done
