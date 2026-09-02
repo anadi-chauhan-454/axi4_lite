@@ -1,0 +1,18 @@
+{
+  "DESIGN_NAME": "axi4_lite",
+  "VERILOG_FILES": [
+    "src/axi4_lite_pkg.sv",
+    "src/axi4_lite_master_read.sv",
+    "src/axi4_lite_master_write.sv",
+    "src/axi4_lite_master_top.sv",
+    "src/axi4_lite_slave_read.sv",
+    "src/axi4_lite_slave_registers.sv",
+    "src/axi4_lite_slave_write.sv",
+    "src/axi4_lite_slave_top.sv",
+    "src/design.sv"
+  ],
+  "CLOCK_PORT": "clk",
+  "CLOCK_PERIOD": 10.0,
+  "PDK": "sky130A",
+  "STD_CELL_LIBRARY": "sky130_fd_sc_hd"
+}
